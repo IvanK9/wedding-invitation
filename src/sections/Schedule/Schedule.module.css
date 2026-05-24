@@ -1,0 +1,139 @@
+.schedule {
+  padding: 80px 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--wedding-bg);
+}
+
+
+.schedule__container {
+  max-width: 650px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+
+.schedule__title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--wedding-dark);
+  text-align: center;
+}
+
+
+.schedule__timeline {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 32px; 
+}
+
+
+.schedule__timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 7px; 
+  width: 1px;
+  background-color: var(--wedding-sand);
+}
+
+
+.schedule__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+
+.schedule__item::before {
+  content: '';
+  position: absolute;
+  left: -31px; 
+  top: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--wedding-bg);
+  border: 1px solid var(--wedding-accent);
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.schedule__item:hover::before {
+  background-color: var(--wedding-accent);
+}
+
+
+.schedule__time {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--wedding-accent);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+
+.schedule__event-title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--wedding-dark);
+}
+
+
+.schedule__description {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: #717171;
+  line-height: 1.5;
+}
+
+
+@media (min-width: 768px) {
+  .schedule {
+    padding: 120px 24px;
+  }
+
+  .schedule__title {
+    font-size: 42px;
+  }
+
+  .schedule__timeline {
+    padding-left: 40px;
+    gap: 48px;
+  }
+
+  .schedule__timeline::before {
+    left: 9px;
+  }
+
+  .schedule__item::before {
+    left: -38px;
+    width: 19px;
+    height: 19px;
+    top: 4px;
+  }
+
+  .schedule__time {
+    font-size: 24px;
+  }
+
+  .schedule__event-title {
+    font-size: 18px;
+  }
+}

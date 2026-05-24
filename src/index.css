@@ -1,0 +1,37 @@
+@import url("https://googleapis.com family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap");
+
+:root {
+  --wedding-bg: #fbfbfa;
+  --wedding-dark: #2c302e;
+  --wedding-accent: #7a8a7f;
+  --wedding-sand: #e6dfd3;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", Inter, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--wedding-bg);
+  color: var(--wedding-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+::selection {
+  background-color: var(--wedding-accent);
+  color: #ffffff;
+}

@@ -1,0 +1,70 @@
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+.timer__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 1px solid var(--wedding-sand);
+  border-radius: 8px;
+  min-width: 70px;
+  height: 85px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease;
+}
+
+.timer__item:hover {
+  transform: translateY(-2px);
+}
+
+
+.timer__value {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--wedding-dark);
+  line-height: 1.2;
+}
+
+
+.timer__label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--wedding-accent);
+  margin-top: 4px;
+}
+
+
+@media (min-width: 768px) {
+  .timer {
+    gap: 24px;
+    margin: 48px auto;
+  }
+
+  .timer__item {
+    min-width: 90px;
+    height: 105px;
+    border-radius: 12px;
+  }
+
+  .timer__value {
+    font-size: 38px;
+  }
+
+  .timer__label {
+    font-size: 12px;
+  }
+}

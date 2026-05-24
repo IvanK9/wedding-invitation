@@ -1,0 +1,195 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  overflow: hidden;
+  background-color: var(--wedding-bg);
+}
+
+.hero__music-button {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--wedding-sand);
+  color: var(--wedding-accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero__music-button:hover {
+  background-color: var(--wedding-accent);
+  color: #ffffff;
+}
+
+.hero__music-bars {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+  height: 16px;
+}
+
+
+.hero__music-bar {
+  width: 2px;
+  background-color: currentColor;
+  animation: bounce ease-in-out infinite alternate;
+}
+
+
+.hero__music-bar--first { height: 16px; animation-duration: 0.5s; }
+.hero__music-bar--second { height: 12px; animation-duration: 0.35s; }
+.hero__music-bar--third { height: 16px; animation-duration: 0.6s; }
+
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  z-index: 10;
+  gap: 24px;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+
+.hero__subtitle {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--wedding-accent);
+}
+
+
+.hero__names {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.hero__name {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--wedding-dark);
+}
+
+
+.hero__ampersand {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--wedding-accent);
+  margin: 8px 0;
+  font-weight: 300;
+}
+
+
+.hero__divider {
+  width: 96px;
+  height: 1px;
+  background-color: rgba(122, 138, 127, 0.4);
+  margin: 16px 0;
+}
+
+
+.hero__date-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.hero__date {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  color: var(--wedding-dark);
+}
+
+
+.hero__day {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wedding-accent);
+}
+
+
+.hero__scroll-icon {
+  margin-top: 32px;
+  color: rgba(122, 138, 127, 0.8);
+  animation: scrollBounce 2s infinite;
+}
+
+.hero__scroll-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1px;
+}
+
+
+.hero__decor {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+
+.hero__decor--left {
+  bottom: -80px;
+  left: -80px;
+  background-color: rgba(230, 223, 211, 0.2);
+}
+
+.hero__decor--right {
+  top: -80px;
+  right: -80px;
+  background-color: rgba(122, 138, 127, 0.1);
+}
+
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1.1); }
+}
+
+@keyframes scrollBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+
+@media (min-width: 768px) {
+  .hero__content { gap: 32px; }
+  .hero__subtitle { font-size: 18px; }
+  .hero__name { font-size: 64px; }
+  .hero__ampersand { font-size: 36px; }
+  .hero__date { font-size: 32px; }
+  .hero__day { font-size: 12px; }
+}

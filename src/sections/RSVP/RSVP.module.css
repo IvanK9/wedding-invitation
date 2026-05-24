@@ -1,0 +1,229 @@
+.rsvp {
+  padding: 80px 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--wedding-bg);
+}
+
+.rsvp__container {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.rsvp__title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--wedding-dark);
+  text-align: center;
+}
+
+.rsvp__subtitle {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: #717171;
+  text-align: center;
+  margin-top: -16px;
+}
+
+.rsvp__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background-color: #ffffff;
+  padding: 32px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--wedding-sand);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.01);
+}
+
+.rsvp__field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rsvp__label {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--wedding-dark);
+}
+
+.rsvp__input {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  padding: 12px 16px;
+  border: 1px solid var(--wedding-sand);
+  border-radius: 8px;
+  background-color: var(--wedding-bg);
+  color: var(--wedding-dark);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.rsvp__input:focus {
+  border-color: var(--wedding-accent);
+}
+
+.rsvp__options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.rsvp__option-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--wedding-dark);
+  cursor: pointer;
+  padding: 10px 14px;
+  border: 1px solid var(--wedding-bg);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.rsvp__option-label:hover {
+  background-color: var(--wedding-bg);
+}
+
+.rsvp__checkbox,
+.rsvp__radio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rsvp__custom-indicator {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--wedding-accent);
+  border-radius: 4px; 
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.rsvp__custom-indicator--radio {
+  border-radius: 50%;
+}
+
+.rsvp__checkbox:checked + .rsvp__custom-indicator::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: var(--wedding-accent);
+  font-weight: bold;
+}
+
+.rsvp__radio:checked + .rsvp__custom-indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--wedding-accent);
+}
+
+.rsvp__submit-btn {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 14px;
+  background-color: var(--wedding-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  margin-top: 12px;
+}
+
+.rsvp__submit-btn:hover {
+  background-color: #67776c;
+}
+
+.rsvp__submit-btn:active {
+  transform: scale(0.98);
+}
+
+.rsvp__success-message {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-style: italic;
+  color: var(--wedding-accent);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.rsvp__input--error {
+  border-color: #e57373 !important;
+  background-color: #fff8f8;
+}
+
+.rsvp__option-label--error {
+  border-color: rgba(229, 115, 115, 0.4) !important;
+  background-color: #fff8f8;
+}
+
+.rsvp__error-text {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: #e57373;
+  margin-top: 4px;
+  font-weight: 400;
+  display: block;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+@media (min-width: 768px) {
+  .rsvp {
+    padding: 120px 24px;
+  }
+  .rsvp__title {
+    font-size: 42px;
+  }
+  .rsvp__form {
+    padding: 48px 40px;
+  }
+  .rsvp__options-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

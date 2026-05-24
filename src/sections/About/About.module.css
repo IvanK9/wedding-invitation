@@ -1,0 +1,69 @@
+.about {
+  padding: 80px 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--wedding-bg);
+}
+
+.about__container {
+  max-width: 650px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+}
+
+.about__title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--wedding-dark);
+  line-height: 1.3;
+}
+
+.about__text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about__paragraph {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--wedding-dark);
+  letter-spacing: 0.02em;
+}
+
+.about__signature {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--wedding-accent);
+  margin-top: 12px;
+}
+
+@media (min-width: 768px) {
+  .about {
+    padding: 120px 24px;
+  }
+
+  .about__title {
+    font-size: 42px;
+  }
+
+  .about__paragraph {
+    font-size: 16px;
+  }
+
+  .about__signature {
+    font-size: 24px;
+  }
+}
