@@ -1,73 +1,19 @@
-# React + TypeScript + Vite
+## 🛠 Стек технологий / Tech Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Проект разработан в соответствии с современными стандартами фронтенд-разработки. Основной упор сделан на высокую скорость работы (HMR), модульность стилей, строгую типизацию и интеграцию с внешними сервисами без использования громоздкого бэкенда.
 
-Currently, two official plugins are available:
+### Frontend
+*   **React 19** — декларативный UI-фреймворк для построения компонентной архитектуры.
+*   **TypeScript** — строгая статическая типизация для повышения надежности и поддержки автодополнения кода.
+*   **Vite** — сверхбыстрый сборщик нового поколения с мгновенной поддержкой горячей перезагрузки модулей (HMR).
+*   **CSS Modules (с методологией БЭМ)** — изолированные (инкапсулированные) стили компонентов, исключающие конфликты классов. Наименования классов построены по стандарту *Блок-Элемент-Модификатор*.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Интеграции и API (Serverless approach)
+*   **Telegram Bot API (HTML mode)** — мгновенная отправка результатов анкетирования гостей напрямую в персональный чат/канал в режиме реального времени.
+*   **Google Apps Script (Web App)** — кастомный микросерверный обработчик на JavaScript, который принимает POST-запросы с сайта и автоматически формирует структурированную базу данных гостей.
+*   **Google Sheets API** — использование облачных таблиц в качестве полноценной базы данных для агрегации ответов гостей.
+*   **Yandex Maps JavaScript API (Iframe integration)** — адаптивная интерактивная карта для удобной навигации гостей к месту проведения мероприятия.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Безопасность и Деплой
+*   **Vite Environment Variables (`.env`)** — надежное скрытие чувствительных данных (токенов ботов, ID чатов и приватных URL скриптов) из исходного кода репозитория.
+*   **Vercel / Netlify Cloud Platform** — автоматический CI/CD деплой проекта напрямую из ветки `main` репозитория GitHub.
