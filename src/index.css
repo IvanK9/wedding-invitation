@@ -1,13 +1,15 @@
-@import url("https://googleapis.com family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap");
-
+/* @import url("https://googleapis.com family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Manrope:wght@200..800&display=swap');
 :root {
-  --wedding-bg: #fbfbfa;
-  --wedding-dark: #2c302e;
-  --wedding-accent: #7a8a7f;
-  --wedding-sand: #e6dfd3;
-
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Montserrat", Inter, sans-serif;
+  --wedding-bg: #FAF9F5; 
+  --wedding-dark: #2C302E;
+  --wedding-dark-muted: #606662;
+  --wedding-accent: #7A8A7F;
+  --wedding-accent-light: #94A398;
+  --wedding-sand: #E6DFD3;
+  --wedding-sand-light: #F2ECE1;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Cormorant Infant', sans-serif;
 }
 
 * {

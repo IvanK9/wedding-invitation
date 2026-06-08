@@ -69,9 +69,10 @@
 
 .hero__subtitle {
   font-size: 12px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--wedding-accent);
+  margin-bottom: 8px;
 }
 
 
@@ -84,10 +85,10 @@
 
 .hero__name {
   font-family: var(--font-serif);
-  font-size: 40px;
-  font-weight: 300;
+  font-size: 44px;
+  font-weight: 400;
   font-style: italic;
-  line-height: 1.2;
+  line-height: 1.1;
   color: var(--wedding-dark);
 }
 
@@ -102,10 +103,10 @@
 
 
 .hero__divider {
-  width: 96px;
+  width: 60px;
   height: 1px;
-  background-color: rgba(122, 138, 127, 0.4);
-  margin: 16px 0;
+  background-color: var(--wedding-sand);
+  margin: 24px 0;
 }
 
 
