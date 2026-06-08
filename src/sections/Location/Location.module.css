@@ -1,8 +1,5 @@
-
-
-
 .location {
-  padding: 80px 16px;
+  padding: 60px 16px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -95,7 +92,7 @@
 
 @media (min-width: 768px) {
   .location {
-    padding: 120px 24px;
+    padding: 60px 24px;
   }
 
   .location__title {

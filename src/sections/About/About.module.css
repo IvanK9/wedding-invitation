@@ -1,5 +1,5 @@
 .about {
-  padding: 80px 16px;
+  padding: 60px 16px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@
 
 @media (min-width: 768px) {
   .about {
-    padding: 120px 24px;
+    padding: 60px 24px;
   }
 
   .about__title {

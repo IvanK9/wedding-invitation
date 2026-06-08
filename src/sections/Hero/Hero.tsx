@@ -22,11 +22,20 @@ export default function Hero() {
     setIsPlaying(!isPlaying);
   };
 
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById('about'); // Ищем блок по id
+    if (nextSection) {
+      nextSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className={styles.hero}>
       <audio ref={audioRef} src={heroSong} loop />
 
-      {}
       <button
         onClick={toggleMusic}
         className={styles["hero__music-button"]}
@@ -64,7 +73,6 @@ export default function Hero() {
         )}
       </button>
 
-      {/* Главный контент */}
       <div className={styles["hero__content"]}>
         <p className={styles["hero__subtitle"]}>Приглашаем на свадьбу</p>
 
@@ -81,7 +89,7 @@ export default function Hero() {
           <p className={styles["hero__day"]}>Суббота</p>
         </div>
 
-        <div className={styles["hero__scroll-icon"]}>
+        <button className={styles["hero__scroll-btn"]} onClick={scrollToNextSection} aria-label="Прокрутить вниз">
           <svg
             xmlns="http://w3.org"
             fill="none"
@@ -94,10 +102,9 @@ export default function Hero() {
               d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
             />
           </svg>
-        </div>
+        </button>
       </div>
 
-      {/* Декоративный фон с модификаторами */}
       <div
         className={`${styles["hero__decor"]} ${styles["hero__decor--left"]}`}
       ></div>
