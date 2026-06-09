@@ -1,6 +1,5 @@
-
 import styles from "./Schedule.module.css";
-
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 interface TimelineItem {
   time: string;
@@ -15,36 +14,41 @@ export default function Schedule () {
       time: "16:00",
       title: "Сбор гостей",
       description:
-        "Приветственный фуршет и знакомство гостей.",
+        "Приветственный фуршет и знакомство гостей",
     },
     {
       time: "16:30",
       title: "Торжественная церемония",
       description:
-        "Самый трогательный момент — церемония и обмен кольцами.",
+        "Самый трогательный момент — церемония и обмен кольцами",
     },
     {
       time: "17:00",
       title: "Свадебный ужин",
       description:
-        "Начало праздничного банкета, поздравления, конкурсы и зажигательные танцы.",
+        "Начало праздничного банкета, поздравления, конкурсы и зажигательные танцы",
     },
     {
       time: "21:00",
       title: "Свадебный торт",
       description:
-        "Разрезание главного свадебного десерта и уютное завершение официальной части.",
+        "Разрезание главного свадебного десерта и уютное завершение официальной части",
     },
     {
       time: "23:00",
       title: "Окончание вечера",
       description:
-        "Объятия и завершение нашего прекрасного праздника.",
+        "Объятия и завершение нашего прекрасного праздника",
     },
   ];
 
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
-    <section className={styles.schedule}>
+    <section 
+        ref={elementRef as React.RefObject<HTMLButtonElement>}
+        className={`${styles.schedule} scroll-fade ${isVisible ? 'scroll-fade--visible' : ''}`}
+    >
       <div className={styles["schedule__container"]}>
         {}
         <h2 className={styles["schedule__title"]}>План дня</h2>

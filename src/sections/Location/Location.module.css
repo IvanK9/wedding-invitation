@@ -9,7 +9,7 @@
 
 
 .location__container {
-  max-width: 750px; 
+  max-width: 700px; 
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 
 .location__title {
   font-family: var(--font-serif);
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 400;
   font-style: italic;
   color: var(--wedding-dark);
@@ -30,7 +30,6 @@
 
 .location__card {
   width: 100%;
-  max-width: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,14 +37,14 @@
   padding: 48px 32px;
   background-color: #ffffff;
   border: 1px solid var(--wedding-sand-light);
-  border-radius: 4px; 
+  border-radius: 20px; 
   box-shadow: 0 10px 35px rgba(44, 48, 46, 0.03); 
 }
 
 
 .location__name {
   font-family: var(--font-serif);
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 400;
   font-style: italic;
   color: var(--wedding-accent);
@@ -55,7 +54,7 @@
 
 .location__description {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--wedding-dark);
   margin-bottom: 12px;
@@ -65,7 +64,7 @@
 
 .location__address {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 300;
   color: #717171;
   line-height: 1.6;
@@ -74,9 +73,9 @@
 
 .location__map-wrapper {
   width: 100%;
-  max-width: 550px;
+  /* max-width: 550px; */
   height: 350px;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--wedding-sand);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
@@ -95,17 +94,17 @@
     padding: 60px 24px;
   }
 
-  .location__title {
+  /* .location__title {
     font-size: 42px;
-  }
+  } */
 
   .location__card {
     padding: 48px 40px;
   }
 
-  .location__name {
+  /* .location__name {
     font-size: 32px;
-  }
+  } */
 
   .location__map-wrapper {
     height: 400px;

@@ -1,8 +1,14 @@
 import styles from "./About.module.css";
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 export default function About() {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
-    <section className={styles.about} id="about">
+    <section 
+    ref={elementRef as React.RefObject<HTMLButtonElement>} 
+    className={`${styles.about} scroll-fade ${isVisible ? 'scroll-fade--visible' : ''}`}
+       id="about">
       <div className={styles["about__container"]}>
         <h2 className={styles["about__title"]}>Дорогие родные и близкие!</h2>
 

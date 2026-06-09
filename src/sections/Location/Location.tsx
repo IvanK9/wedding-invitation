@@ -1,9 +1,14 @@
-
 import styles from "./Location.module.css";
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 export default function Location() {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
-    <section className={styles.location}>
+    <section 
+        ref={elementRef as React.RefObject<HTMLButtonElement>}
+        className={`${styles.location} scroll-fade ${isVisible ? 'scroll-fade--visible' : ''}`}
+    >
       <div className={styles["location__container"]}>
         {}
         <h2 className={styles["location__title"]}>Место проведения</h2>
@@ -13,7 +18,7 @@ export default function Location() {
           <h3 className={styles["location__name"]}>Банкетный зал «Сенсация»</h3>
 
           <p className={styles["location__description"]}>
-            И торжественная регистрация, и праздничный банкет пройдут в одной
+            Торжественная регистрация и праздничный банкет пройдут в одной
             локации.
           </p>
 

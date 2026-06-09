@@ -11,7 +11,7 @@
 
 
 .timer__section-container {
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
 
 .timer__section-title {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 32px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.25em;
@@ -36,7 +36,7 @@
     padding: 60px 24px;
   }
 
-  .timer__section-title {
+  /* .timer__section-title {
     font-size: 14px;
-  }
+  } */
 }

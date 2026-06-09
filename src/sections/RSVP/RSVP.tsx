@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./RSVP.module.css";
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 interface FormData {
   name: string;
@@ -98,8 +99,13 @@ export default function RSVP() {
     }
   };
 
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
-    <section className={styles.rsvp}>
+    <section 
+        ref={elementRef as React.RefObject<HTMLButtonElement>}
+        className={`${styles.rsvp} scroll-fade ${isVisible ? 'scroll-fade--visible' : ''}`}
+    >
       <div className={styles["rsvp__container"]}>
         <h2 className={styles["rsvp__title"]}>Подтверждение присутствия</h2>
 

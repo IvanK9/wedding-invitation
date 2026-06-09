@@ -8,7 +8,7 @@
 }
 
 .schedule__container {
-  max-width: 650px;
+  max-width: 700px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 
 .schedule__title {
   font-family: var(--font-serif);
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 400;
   font-style: italic;
   color: var(--wedding-dark);
@@ -50,6 +50,7 @@
   flex-direction: column;
   gap: 8px;
   text-align: left;
+  cursor: default;
 }
 
 .schedule__item::before {
@@ -71,7 +72,7 @@
 
 .schedule__time {
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
   color: var(--wedding-accent);
   letter-spacing: 0.05em;
@@ -80,14 +81,14 @@
 
 .schedule__event-title {
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--wedding-dark);
 }
 
 .schedule__description {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 300;
   color: #717171;
   line-height: 1.5;
@@ -98,9 +99,9 @@
     padding: 60px 24px;
   }
 
-  .schedule__title {
+  /* .schedule__title {
     font-size: 42px;
-  }
+  } */
 
   .schedule__timeline {
     padding-left: 37px;
@@ -118,11 +119,11 @@
     top: 4px;
   }
 
-  .schedule__time {
+  /* .schedule__time {
     font-size: 24px;
   }
 
   .schedule__event-title {
     font-size: 18px;
-  }
+  } */
 }
