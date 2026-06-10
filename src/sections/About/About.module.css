@@ -1,5 +1,5 @@
 .about {
-  padding: 60px 16px;
+  padding: var(--padding-desktop);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -50,9 +50,9 @@
   margin-top: 12px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .about {
-    padding: 60px 24px;
+    padding: var(--padding-mobile);
   }
 
   /* .about__title {

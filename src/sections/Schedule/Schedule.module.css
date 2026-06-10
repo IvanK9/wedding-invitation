@@ -1,5 +1,5 @@
 .schedule {
-  padding: 60px 16px;
+  padding: 60px var(--padding-desktop);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -94,9 +94,9 @@
   line-height: 1.5;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .schedule {
-    padding: 60px 24px;
+    padding: var(--padding-mobile);
   }
 
   /* .schedule__title {

@@ -10,6 +10,9 @@
   --wedding-sand-light: #F2ECE1;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Cormorant Infant', sans-serif;
+
+  --padding-desktop: 60px 25px;
+  --padding-mobile: 40px 15px;
 }
 
 * {

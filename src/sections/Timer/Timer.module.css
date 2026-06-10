@@ -1,5 +1,5 @@
 .timer__section {
-  padding: 60px 16px;
+  padding: var(--padding-desktop);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -31,12 +31,13 @@
 }
 
 
-@media (min-width: 768px) {
-  .timer__section {
-    padding: 60px 24px;
+@media (max-width: 768px) {
+  .timer__section-container {
+    padding: var(--padding-mobile);
+    max-width: 550px;
   }
 
-  /* .timer__section-title {
-    font-size: 14px;
-  } */
+  .timer__section-title {
+    font-size: 26px;
+  }
 }

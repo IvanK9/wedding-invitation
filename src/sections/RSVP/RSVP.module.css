@@ -1,5 +1,5 @@
 .rsvp {
-  padding: 60px 16px;
+  padding: var(--padding-desktop);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -77,7 +77,7 @@
 
 .rsvp__options-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
@@ -213,20 +213,20 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .rsvp {
-    padding: 60px 24px;
+    padding: var(--padding-mobile);
   }
 
   /* .rsvp__title {
     font-size: 42px;
   } */
 
-  .rsvp__form {
+  /* .rsvp__form {
     padding: 48px 40px;
-  }
+  } */
 
   .rsvp__options-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }

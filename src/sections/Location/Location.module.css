@@ -1,5 +1,5 @@
 .location {
-  padding: 60px 16px;
+  padding: var(--padding-desktop);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -89,24 +89,24 @@
 }
 
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .location {
-    padding: 60px 24px;
+    padding: var(--padding-mobile);
   }
 
   /* .location__title {
     font-size: 42px;
   } */
 
-  .location__card {
+  /* .location__card {
     padding: 48px 40px;
-  }
+  } */
 
   /* .location__name {
     font-size: 32px;
   } */
 
-  .location__map-wrapper {
+  /* .location__map-wrapper {
     height: 400px;
-  }
+  } */
 }

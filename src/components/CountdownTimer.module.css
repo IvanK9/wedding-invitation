@@ -45,23 +45,29 @@
   margin-top: 4px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .timer {
     gap: 24px;
     margin: 48px auto;
   }
 
   .timer__item {
-    min-width: 100px;
-    height: 105px;
+    min-width: 70px;
+    height: 65px;
     border-radius: 12px;
   }
 
-  /* .timer__value {
-    font-size: 38px;
+  .timer__value {
+    font-size: 24px;
   }
 
   .timer__label {
     font-size: 12px;
-  } */
+  }
+}
+
+@media (max-width: 580px) {
+  .timer {
+    gap: 14px;
+  }
 }
