@@ -70,7 +70,10 @@ export default function RSVP() {
 
     try {
       // const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-      const telegramPromise = fetch('/api/send-rsvp', {
+      const apiUrl = window.location.hostname === 'localhost' 
+        ? 'https://wedding-invitation-eta-ten.vercel.app/api/send-rsvp' 
+        : '/api/send-rsvp';
+      const telegramPromise = fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
