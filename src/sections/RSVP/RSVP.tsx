@@ -24,7 +24,7 @@ export default function RSVP() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-  const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+  // const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
   const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,38 +60,52 @@ export default function RSVP() {
         formData.attendance === "yes" ? Number(formData.guestsCount) : 0,
     };
 
-    const attendanceText =
-      payload.attendance === "yes" ? "✅ Придет" : "❌ Не придет";
-    const guestsText =
-      payload.attendance === "yes"
-        ? `\n👥 Количество мест: ${payload.guestsCount}`
-        : "";
-    const telegramMessage = `🔔 *Новый ответ на приглашение!*\n\n👤 Имя: ${payload.name}\n📊 Статус: ${attendanceText}${guestsText}`;
+    // const attendanceText =
+    //   payload.attendance === "yes" ? "✅ Придет" : "❌ Не придет";
+    // const guestsText =
+    //   payload.attendance === "yes"
+    //     ? `\n👥 Количество мест: ${payload.guestsCount}`
+    //     : "";
+    // const telegramMessage = `🔔 *Новый ответ на приглашение!*\n\n👤 Имя: ${payload.name}\n📊 Статус: ${attendanceText}${guestsText}`;
+
+    // try {
+    //   const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    //   const telegramPromise = fetch(telegramUrl, {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({
+    //       chat_id: TELEGRAM_CHAT_ID,
+    //       text: telegramMessage,
+    //       parse_mode: "Markdown",
+    //     }),
+    //   });
+
+    //   const googlePromise = fetch(GOOGLE_SCRIPT_URL, {
+    //     method: "POST",
+    //     mode: "no-cors",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(payload),
+    //   });
+
+
+    //   await Promise.all([telegramPromise, googlePromise]);
+
+    //   setIsSubmitted(true);
+    // } catch (error) {
+    //   console.error("Ошибка при отправке данных:", error);
+    //   alert("Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.");
+    // } finally {
+    //   setIsSubmitting(false);
+    // }
 
     try {
-      // const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-      const apiUrl = window.location.hostname === 'localhost' 
-        ? 'https://wedding-invitation-eta-ten.vercel.app/api/send-rsvp' 
-        : '/api/send-rsvp';
-      const telegramPromise = fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: telegramMessage,
-          parse_mode: "Markdown",
-        }),
-      });
-
-      const googlePromise = fetch(GOOGLE_SCRIPT_URL, {
+      // Отправляем данные исключительно в Google Таблицу (работает стабильно в РФ)
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
-
-      await Promise.all([telegramPromise, googlePromise]);
 
       setIsSubmitted(true);
     } catch (error) {
