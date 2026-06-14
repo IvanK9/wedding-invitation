@@ -23,7 +23,7 @@ export default function RSVP() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+  // const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
   const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
   const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
@@ -69,8 +69,8 @@ export default function RSVP() {
     const telegramMessage = `🔔 *Новый ответ на приглашение!*\n\n👤 Имя: ${payload.name}\n📊 Статус: ${attendanceText}${guestsText}`;
 
     try {
-      const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-      const telegramPromise = fetch(telegramUrl, {
+      // const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+      const telegramPromise = fetch('/api/send-rsvp', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
