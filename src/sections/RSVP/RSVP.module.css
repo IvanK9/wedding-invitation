@@ -181,18 +181,18 @@
 }
 
 .rsvp__input--error {
-  border-color: #e57373 !important;
+  border-color: #e57373;
   background-color: #fff8f8;
 }
 
 .rsvp__option-label--error {
-  border-color: rgba(229, 115, 115, 0.4) !important;
+  border-color: rgba(229, 115, 115, 0.4);
   background-color: #fff8f8;
 }
 
 .rsvp__error-text {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 18px;
   color: #e57373;
   margin-top: 4px;
   font-weight: 400;
@@ -242,7 +242,6 @@
   letter-spacing: -0.3px;
 }
 
-/* Текст описания */
 .rsvp__success-text {
   font-family: inherit;
   font-weight: 400;

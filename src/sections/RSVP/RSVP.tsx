@@ -103,7 +103,7 @@ export default function RSVP() {
         {!isSubmitted ? (
           <>
             <p className={styles["rsvp__subtitle"]}>
-              Будем признательны, если вы ответите любым удобным способом или с помощью формы ниже, до 25 июля 2026 года
+              Будем признательны, если вы ответите любым удобным способом или с помощью формы ниже до 25 июля 2026 года
             </p>
 
             <form
@@ -213,12 +213,12 @@ export default function RSVP() {
                       <span
                         className={`${styles["rsvp__custom-indicator"]} ${styles["rsvp__custom-indicator--radio"]}`}
                       ></span>
-                      Приду с парой (+1 гость)
+                      Приду с парой
                     </label>
                   </div>
                 </div>
               )}
-              
+
               {formData.attendance === "yes" && formData.guestsCount === "2" && (
                 <div className={`${styles["rsvp__field-group"]} ${styles["rsvp__field-group--animated"]}`}>
                   <label className={styles["rsvp__label"]} htmlFor="secondName">
@@ -252,12 +252,6 @@ export default function RSVP() {
             </form>
           </>
         ) : (
-          // <div className={styles["rsvp__form"]}>
-          //   <p className={styles["rsvp__success-message"]}>
-          //     Спасибо! Ваш ответ успешно отправлен и учтен при планировании
-          //     праздника.
-          //   </p>
-          // </div>
             <div className={styles["rsvp__success"]}>
               <h3 className={styles["rsvp__success-title"]}>🎉 Спасибо за ответ!</h3>
               <p className={styles["rsvp__success-text"]}>
