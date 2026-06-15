@@ -14,24 +14,24 @@ export default function Details() {
         <h2 className={styles['details__title']}>Важные детали</h2>
         <div className={styles['details__list']}>
           <div className={styles['details__item']}>
-            <span className={styles['details__number']}>I. Подарки</span>
+            <span className={styles['details__number']}>Идеи для подарков</span>
             <p className={styles['details__text']}>
               Мы будем очень рады, если вместо цветов вы подарите нам виниловую пластинку, 
               вашу любимую книгу или бутылку вина для нашей домашней коллекции.
             </p>
           </div>
           <div className={styles['details__item']}>
-            <span className={styles['details__number']}>II. Пожелание</span>
+            <span className={styles['details__number']}>Пожелание</span>
             <p className={styles['details__text']}>
               От всего сердца просим вас воздержаться от криков «Горько!» на банкете. 
               Для нас очень важно сохранить атмосферу уютного и непринужденного семейного праздника.
             </p>
           </div>
           <div className={styles['details__item']}>
-            <span className={styles['details__number']}>III. Формат</span>
+            <span className={styles['details__number']}>Формат</span>
             <p className={styles['details__text']}>
               Обратите внимание, что формат мероприятия не предполагает наличие аниматоров 
-              и детской площадки. Пожалуйста, позаботьтесь заранее о том, чтобы провести этот вечер без детей.
+              и детской площадки. Пожалуйста, позаботьтесь заранее о том, чтобы провести этот вечер без малышей.
             </p>
           </div>
         </div>

@@ -64,9 +64,9 @@
 }
 
 .hero__subtitle {
-  font-size: 30px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 36px;
   color: var(--wedding-accent);
   margin-bottom: 8px;
 }
@@ -113,15 +113,14 @@
 .hero__date {
   font-family: var(--font-serif);
   font-size: 40px;
-  letter-spacing: 0.05em;
+  font-style: italic;
   color: var(--wedding-dark);
 }
 
 
 .hero__day {
-  font-size: 26px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: 32px;
+  font-style: italic;
   color: var(--wedding-accent);
 }
 
@@ -175,11 +174,11 @@
   }
 
   .hero__subtitle {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   .hero__name {
-    font-size: 54px;
+    font-size: 44px;
   }
 
   .hero__date {
@@ -187,7 +186,7 @@
   }
 
   .hero__day {
-    font-size: 20px;
+    font-size: 26px;
   }
   
   .hero__divider {

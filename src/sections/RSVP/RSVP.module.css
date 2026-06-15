@@ -213,18 +213,62 @@
   }
 }
 
+.rsvp__success {
+  text-align: center;
+  padding: 50px 30px;
+  background: var(--bg-secondary, #fafafa);
+  border: 1px solid var(--border-color, #eaeaea);
+  border-radius: var(--radius-large, 12px);
+  max-width: 480px;
+  margin: 30px auto 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+
+  animation: rsvpFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.rsvp__success-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.rsvp__success-title {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 28px;
+  font-style: italic;
+  color: var(--text-primary, #1a1a1a);
+  margin: 0 0 16px 0;
+  letter-spacing: -0.3px;
+}
+
+/* Текст описания */
+.rsvp__success-text {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text-muted, #666666);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@keyframes rsvpFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @media (max-width: 768px) {
   .rsvp {
     padding: var(--padding-mobile);
   }
-
-  /* .rsvp__title {
-    font-size: 42px;
-  } */
-
-  /* .rsvp__form {
-    padding: 48px 40px;
-  } */
 
   .rsvp__options-grid {
     grid-template-columns: 1fr;

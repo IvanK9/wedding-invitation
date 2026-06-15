@@ -6,11 +6,13 @@ interface FormData {
   name: string;
   attendance: "yes" | "no" | "";
   guestsCount: "1" | "2";
+  secondName: string;
 }
 
 interface FormErrors {
   name?: string;
   attendance?: string;
+  secondName?: string;
 }
 
 export default function RSVP() {
@@ -18,6 +20,7 @@ export default function RSVP() {
     name: "",
     attendance: "",
     guestsCount: "1",
+    secondName: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -41,8 +44,18 @@ export default function RSVP() {
       newErrors.name = "Пожалуйста, введите ваше имя и фамилию";
     else if (formData.name.trim().length < 3)
       newErrors.name = "Имя должно быть не короче 3-х символов";
+
     if (!formData.attendance)
       newErrors.attendance = "Пожалуйста, выберите один из вариантов";
+
+    if (formData.attendance === "yes" && formData.guestsCount === "2") {
+      if (!formData.secondName.trim()) {
+        newErrors.secondName = "Пожалуйста, введите имя вашего спутника / спутницы";
+      } else if (formData.secondName.trim().length < 3) {
+        newErrors.secondName = "Имя должно быть не короче 3-х символов";
+      }
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -56,50 +69,11 @@ export default function RSVP() {
     const payload = {
       name: formData.name.trim(),
       attendance: formData.attendance,
-      guestsCount:
-        formData.attendance === "yes" ? Number(formData.guestsCount) : 0,
+      guestsCount: formData.attendance === "yes" ? Number(formData.guestsCount) : 0,
+      secondName: formData.attendance === "yes" && formData.guestsCount === "2" ? formData.secondName.trim() : "",
     };
 
-    // const attendanceText =
-    //   payload.attendance === "yes" ? "✅ Придет" : "❌ Не придет";
-    // const guestsText =
-    //   payload.attendance === "yes"
-    //     ? `\n👥 Количество мест: ${payload.guestsCount}`
-    //     : "";
-    // const telegramMessage = `🔔 *Новый ответ на приглашение!*\n\n👤 Имя: ${payload.name}\n📊 Статус: ${attendanceText}${guestsText}`;
-
-    // try {
-    //   const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-    //   const telegramPromise = fetch(telegramUrl, {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({
-    //       chat_id: TELEGRAM_CHAT_ID,
-    //       text: telegramMessage,
-    //       parse_mode: "Markdown",
-    //     }),
-    //   });
-
-    //   const googlePromise = fetch(GOOGLE_SCRIPT_URL, {
-    //     method: "POST",
-    //     mode: "no-cors",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(payload),
-    //   });
-
-
-    //   await Promise.all([telegramPromise, googlePromise]);
-
-    //   setIsSubmitted(true);
-    // } catch (error) {
-    //   console.error("Ошибка при отправке данных:", error);
-    //   alert("Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.");
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
-
     try {
-      // Отправляем данные исключительно в Google Таблицу (работает стабильно в РФ)
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
@@ -129,7 +103,7 @@ export default function RSVP() {
         {!isSubmitted ? (
           <>
             <p className={styles["rsvp__subtitle"]}>
-              Будем признательны, если вы ответите любым удобным способом или с помощью формы ниже, до 1 августа 2026 года
+              Будем признательны, если вы ответите любым удобным способом или с помощью формы ниже, до 25 июля 2026 года
             </p>
 
             <form
@@ -244,6 +218,29 @@ export default function RSVP() {
                   </div>
                 </div>
               )}
+              
+              {formData.attendance === "yes" && formData.guestsCount === "2" && (
+                <div className={`${styles["rsvp__field-group"]} ${styles["rsvp__field-group--animated"]}`}>
+                  <label className={styles["rsvp__label"]} htmlFor="secondName">
+                    Имя и фамилия вашего спутника / спутницы:
+                  </label>
+                  <input
+                    type="text"
+                    id="secondName"
+                    name="secondName"
+                    value={formData.secondName}
+                    onChange={handleInputChange}
+                    placeholder="Мария Иванова"
+                    className={`${styles["rsvp__input"]} ${errors.secondName ? styles["rsvp__input--error"] : ""}`}
+                    disabled={isSubmitting}
+                  />
+                  {errors.secondName && (
+                    <span className={styles["rsvp__error-text"]}>
+                      {errors.secondName}
+                    </span>
+                  )}
+                </div>
+              )}
 
               <button
                 type="submit"
@@ -255,12 +252,18 @@ export default function RSVP() {
             </form>
           </>
         ) : (
-          <div className={styles["rsvp__form"]}>
-            <p className={styles["rsvp__success-message"]}>
-              Спасибо! Ваш ответ успешно отправлен и учтен при планировании
-              праздника.
-            </p>
-          </div>
+          // <div className={styles["rsvp__form"]}>
+          //   <p className={styles["rsvp__success-message"]}>
+          //     Спасибо! Ваш ответ успешно отправлен и учтен при планировании
+          //     праздника.
+          //   </p>
+          // </div>
+            <div className={styles["rsvp__success"]}>
+              <h3 className={styles["rsvp__success-title"]}>🎉 Спасибо за ответ!</h3>
+              <p className={styles["rsvp__success-text"]}>
+                Ваши данные успешно отправлены и учтены при планировании праздника. До встречи на нашей свадьбе!
+              </p>
+            </div>
         )}
       </div>
     </section>
