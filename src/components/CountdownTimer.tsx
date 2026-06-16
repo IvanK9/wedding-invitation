@@ -10,7 +10,7 @@ interface TimeLeft {
 
 export default function CountdownTimer() {
   
-  const targetDate = new Date("2026-08-22T00:00:00").getTime();
+  const targetDate = new Date("2026-08-22T16:00:00+05:00").getTime();
 
   const calculateTimeLeft = (): TimeLeft => {
     const difference = targetDate - new Date().getTime();
